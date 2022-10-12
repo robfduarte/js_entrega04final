@@ -255,7 +255,6 @@ contact-info, .contact-email, .footer-text {
 }
 .experience-container .experience-boxes .experience-box1:hover .h2-heading {
   font-weight: bolder;
-  text-decoration-line: line-through;
 }
 @media screen and (min-width: 501px) {
   .experience-container .carousel {
