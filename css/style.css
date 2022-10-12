@@ -145,6 +145,7 @@ contact-info, .contact-email, .footer-text {
 @media screen and (max-width: 500px) {
   .home-container .home-social {
     transform: scale(0.9, 0.9);
+    gap: 0.2rem;
   }
 }
 .home-container .home-whatsapp {
