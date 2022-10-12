@@ -1,0 +1,8 @@
+/* -----===== PHRASE ======----- */
+
+.phrase1-container{
+    @include style-containers(1.5rem 5rem, nth($colores,5), nth($colores,3));
+    @media screen and (max-width:500px) {
+        padding: 3rem 2rem;
+    }
+}

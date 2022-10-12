@@ -1,0 +1,17 @@
+/* -----===== SKILLS ======----- */
+
+.skills-container{
+    @include style-containers(7rem 5rem, nth($colores,1), nth($colores,5));
+    @media screen and (max-width:500px) {
+        padding: 3rem 2rem;
+    }
+    .tech-list{
+        font-size: 0.7rem;
+        padding-left: 6rem;
+        list-style: square;
+        line-height: 1.9em;
+        li{
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@mixin display-flex ($display, $justify-content, $align-items, $flex-wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin style-containers ($padding, $bg-color, $color) {
+    padding: $padding;
+    background-color: $bg-color;
+    color: $color;
+}

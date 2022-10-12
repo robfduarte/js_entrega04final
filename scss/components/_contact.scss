@@ -1,0 +1,41 @@
+/* -----===== CONTACT US ======----- */
+
+.contactUs-container{
+
+    @include style-containers(7rem 5rem, nth($colores,3), nth($colores,5));
+    @media screen and (max-width:500px) {
+        padding: 3rem 2rem;
+    }
+    .contactUs-nav{
+        padding: 3rem 0rem;
+        @include display-flex(flex, space-evenly, none, wrap);
+      .form-container{
+        border-style:solid;
+        border-width: 1px;
+        border-color: nth($colores,1);
+        padding: 0.4rem;
+        .form-details{
+            padding-top: 0.7rem;
+            padding-bottom: 1rem;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            .form-input{
+                width: 17rem;
+                height: 1.8rem;
+            }
+            .form-input1{
+                width: 17rem;
+                height: 10rem;
+            }
+
+        }
+      }  
+    }
+    .contactUS-address{
+        padding: 1rem;
+        line-height: 1em;
+    }
+    .contactUs-gmap{
+        padding: 0.7rem;
+    }
+}

@@ -1,0 +1,60 @@
+/* -----===== PORTFOLIO ======----- */
+
+.portfolio-container{
+    @include style-containers(7rem 5rem, nth($colores,1), nth($colores,5));
+    @media screen and (max-width:500px) {
+        padding: 3rem 2rem;
+    }
+    .portofolio-images{
+        padding: 1rem 0rem;
+        @include display-flex(flex, center, none, wrap);
+        @media screen and (max-width:500px) {
+            display: none;
+        }
+        .portfolio-img{
+            padding: 0.4rem 0.4rem;
+            position: relative;
+            width: auto;
+            &:hover{
+                opacity: 0.9;
+            }
+            .image{
+                display: block;
+                width: auto;
+                height: auto;
+            }
+            .overlay{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: auto;
+                width: auto;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: nth($colores,5);
+                &:hover{
+                    opacity: 0.9;
+                }
+                .text{
+                    font-family: 'Montserrat', sans-serif;
+                    color: nth($colores,3);
+                    font-size: 0.9rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                }
+            }
+        }
+    }
+.carousel {
+    @media screen and (min-width:501px) {
+            display: none;
+        }
+    }
+}

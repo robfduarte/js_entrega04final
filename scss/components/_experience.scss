@@ -1,0 +1,57 @@
+/* -----===== EXPERIENCE ======----- */
+
+.experience-container {
+    @include style-containers(7rem 5rem, nth($colores,3), nth($colores,5));
+
+    @media screen and (max-width:500px) {
+        padding: 3rem 2rem;
+    }
+
+    .experience-boxes {
+        padding-top: 2rem;
+        text-align: center;
+
+        @media screen and (max-width:500px) {
+            display: none;
+        }
+        .experience-box1:hover{
+            border-radius: 2rem;
+            background-color: nth($colores,5);
+            color: nth($colores,3);
+            transition: .6s ease;
+            .h2-heading{
+                font-weight: bolder;
+                text-decoration-line: line-through;
+                
+            }
+        }
+    }
+
+    .carousel {
+        @media screen and (min-width:501px) {
+            display: none;
+        }
+    }
+
+    .carousel-dimension {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0rem;
+
+        .experience-box {
+            text-align: center;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background-color: nth($colores,5);
+            color: nth($colores,3);
+        }
+
+        .carousel-control-next,
+        .carousel-control-prev,
+        .carousel-caption {
+            
+            justify-content:last baseline;
+        }
+    }
+
+}

@@ -1,0 +1,76 @@
+/* -----===== HOME ======----- */
+
+.home-container {
+    @include style-containers(10rem 3rem, nth($colores,1), nth($colores,5));
+
+    .home-text {
+        height: 40%;
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: .2em;
+        line-height: 2em;
+
+        .home-text-main {
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        .home-text-second {
+            overflow: hidden;
+            background: linear-gradient(90deg, nth($colores, 6), nth($colores, 2), nth($colores, 6));
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 10s ease-in infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: nth($colores, 7);
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: -500%;
+            }
+
+            100% {
+                background-position: 500%;
+            }
+        }
+
+        .home-text-second1 {
+            overflow: hidden;
+            background: linear-gradient(90deg, nth($colores, 6), nth($colores, 2), nth($colores, 6));
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 10s ease-out infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: nth($colores, 7);
+        }
+    }
+
+
+    .home-social {
+        @include display-flex(flex, center, center, none);
+        gap: 1rem;
+        transform: scale(0.5, 0.5);
+        transition: transform .2s;
+
+        .social-icons:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .home-whatsapp {
+        transform: scale(0.8, 0.8);
+        position: fixed;
+        width: 5rem;
+        height: 5rem;
+        bottom: 3rem;
+        right: 3rem;
+
+        .social-icons1:hover {
+            opacity: .8;
+        }
+    }
+
+}

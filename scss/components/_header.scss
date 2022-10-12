@@ -1,0 +1,22 @@
+/* -----===== HEADER ======----- */
+
+.header-container {
+    @include style-containers(.2rem .2rem, nth($colores,5), nth($colores,1));
+    font-size: 1rem;
+    @include display-flex(flex, right, none, none);
+    position: sticky;
+    top: 0;
+    z-index: 300;
+
+    .container-fluid {
+        padding-right: 4rem;
+
+        .navbar-nav a:hover {
+            color: nth($colores,2);
+
+            .nav-link {
+                color: nth($colores,1);
+            }
+        }
+    }
+}
