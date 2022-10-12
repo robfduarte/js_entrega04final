@@ -134,12 +134,18 @@ contact-info, .contact-email, .footer-text {
   justify-content: center;
   align-items: center;
   flex-wrap: none;
+  padding-top: 3rem;
   gap: 1rem;
-  transform: scale(0.5, 0.5);
+  transform: scale(0.6, 0.6);
   transition: transform 0.2s;
 }
 .home-container .home-social .social-icons:hover {
   transform: scale(1.2);
+}
+@media screen and (max-width: 500px) {
+  .home-container .home-social {
+    transform: scale(0.9, 0.9);
+  }
 }
 .home-container .home-whatsapp {
   transform: scale(0.8, 0.8);
@@ -408,6 +414,12 @@ contact-info, .contact-email, .footer-text {
 }
 .footer-container .footer-social .social-icons:hover {
   transform: scale(1.2);
+}
+@media screen and (max-width: 500px) {
+  .footer-container .footer-social {
+    transform: scale(0.9, 0.9);
+    gap: 1rem;
+  }
 }
 .footer-container .footer-text {
   width: 20%;
