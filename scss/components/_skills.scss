@@ -4,15 +4,58 @@
     @include style-containers(7rem 5rem, nth($colores,1), nth($colores,5));
     @media screen and (max-width:500px) {
         padding: 3rem 2rem;
-        
     }
     .tech-list{
+        width: fit-content;
         font-size: 0.7rem;
         padding-left: 6rem;
         list-style: square;
         line-height: 1.9em;
-        li{
-            font-family: 'Montserrat', sans-serif;
-        }
+        ul {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+          }
+          
+          li {
+            flex-basis: 50%;
+            box-sizing: border-box;
+            animation: fade 8s linear infinite;
+          }
+          
+          li:nth-of-type(2) {
+            animation-delay: 1s;
+          }
+          li:nth-of-type(3) {
+            animation-delay: 2s;
+          }
+          li:nth-of-type(4) {
+            animation-delay: 3s;
+          }
+          li:nth-of-type(5) {
+            animation-delay: 4s;
+          }
+          li:nth-of-type(6) {
+            animation-delay: 5s;
+          }
+          li:nth-of-type(7) {
+            animation-delay: 6s;
+          }
+          li:nth-of-type(8) {
+            animation-delay: 7s;
+          }
+           @keyframes fade {
+            from {
+              color: nth($colores,6);
+            }
+            12.5% {
+              color: nth($colores,3);
+              background-color: nth($colores,5);
+            }
+            25% {
+              color: black;
+              background-color: nth($colores,1);
+            }
+          }
     }
 }

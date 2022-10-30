@@ -219,13 +219,55 @@ contact-info, .contact-email, .footer-text {
   }
 }
 .skills-container .tech-list {
+  width: fit-content;
   font-size: 0.7rem;
   padding-left: 6rem;
   list-style: square;
   line-height: 1.9em;
 }
+.skills-container .tech-list ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
 .skills-container .tech-list li {
-  font-family: "Montserrat", sans-serif;
+  flex-basis: 50%;
+  box-sizing: border-box;
+  animation: fade 8s linear infinite;
+}
+.skills-container .tech-list li:nth-of-type(2) {
+  animation-delay: 1s;
+}
+.skills-container .tech-list li:nth-of-type(3) {
+  animation-delay: 2s;
+}
+.skills-container .tech-list li:nth-of-type(4) {
+  animation-delay: 3s;
+}
+.skills-container .tech-list li:nth-of-type(5) {
+  animation-delay: 4s;
+}
+.skills-container .tech-list li:nth-of-type(6) {
+  animation-delay: 5s;
+}
+.skills-container .tech-list li:nth-of-type(7) {
+  animation-delay: 6s;
+}
+.skills-container .tech-list li:nth-of-type(8) {
+  animation-delay: 7s;
+}
+@keyframes fade {
+  from {
+    color: #000000;
+  }
+  12.5% {
+    color: #ece3db;
+    background-color: #051622;
+  }
+  25% {
+    color: black;
+    background-color: #DEB992;
+  }
 }
 
 /* -----===== EXPERIENCE ======----- */
