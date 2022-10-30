@@ -4,6 +4,7 @@
     @include style-containers(7rem 5rem, nth($colores,1), nth($colores,5));
     @media screen and (max-width:500px) {
         padding: 3rem 2rem;
+        
     }
     .tech-list{
         font-size: 0.7rem;

@@ -10,13 +10,14 @@
         padding: 3rem 0rem;
         @include display-flex(flex, space-evenly, none, wrap);
       .form-container{
-        background-color: nth($colores,4);
+        background-color: nth($colores,5);
         border-radius: 1rem;
         border-style:solid;
         border-width: 1px;
-        border-color: nth($colores,1);
+        border-color: nth($colores,5);
         padding: 0.4rem;
         .form-details{
+            color: nth($colores,2);
             text-transform: uppercase;
             letter-spacing: 2px;
             padding-top: 0.7rem;
@@ -31,18 +32,31 @@
                 width: 17rem;
                 height: 10rem;
             }
+            .form-input:focus{
+                outline: none   ;
+                border:3px solid nth($colores,2);
+            }
+            .form-input1:focus{
+                outline: none   ;
+                border:3px solid nth($colores,2);
+            }
+        
             .boton{
                 display: inline-block;
-                background-image: linear-gradient(125deg, nth($colores,1),nth($colores,5));
-                color: nth($colores,3);
+                background-image: linear-gradient(125deg, nth($colores,1),nth($colores,2));
+                color: nth($colores,6);
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 font-size: 0.7rem;
-                padding: 0.3rem 0.5rem;
+                padding: 0.4rem 0.5rem;
                 margin-left: 3rem;
                 border: none;
                 width: 200px;
                 cursor: pointer;
+            }
+            .boton:hover{
+                font-weight: bolder;
+                box-shadow: 0 0 10px nth($colores,3);
             }
 
         }
