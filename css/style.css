@@ -225,11 +225,6 @@ contact-info, .contact-email, .footer-text {
   list-style: square;
   line-height: 1.9em;
 }
-.skills-container .tech-list ul {
-  display: flex;
-  list-style-type: none;
-  flex-wrap: wrap;
-}
 .skills-container .tech-list li {
   flex-basis: 50%;
   box-sizing: border-box;
