@@ -267,6 +267,7 @@ contact-info, .contact-email, .footer-text {
   padding: 0rem;
 }
 .experience-container .carousel-dimension .experience-box {
+  min-height: max-content;
   text-align: center;
   padding: 1rem 2rem;
   border-radius: 2rem;
@@ -367,12 +368,16 @@ contact-info, .contact-email, .footer-text {
   flex-wrap: wrap;
 }
 .contactUs-container .contactUs-nav .form-container {
+  background-color: #dea363;
+  border-radius: 1rem;
   border-style: solid;
   border-width: 1px;
   border-color: #DEB992;
   padding: 0.4rem;
 }
 .contactUs-container .contactUs-nav .form-container .form-details {
+  text-transform: uppercase;
+  letter-spacing: 2px;
   padding-top: 0.7rem;
   padding-bottom: 1rem;
   padding-left: 0.4rem;
@@ -385,6 +390,19 @@ contact-info, .contact-email, .footer-text {
 .contactUs-container .contactUs-nav .form-container .form-details .form-input1 {
   width: 17rem;
   height: 10rem;
+}
+.contactUs-container .contactUs-nav .form-container .form-details .boton {
+  display: inline-block;
+  background-image: linear-gradient(125deg, #DEB992, #051622);
+  color: #ece3db;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  margin-left: 3rem;
+  border: none;
+  width: 200px;
+  cursor: pointer;
 }
 .contactUs-container .contactUS-address {
   padding: 1rem;
