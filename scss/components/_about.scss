@@ -25,5 +25,28 @@
     .about-text{
         max-width: 35rem;
         line-height: 1.6rem;
+        .hx-heading {
+            background: 50% 100% / 50% 50% no-repeat
+                        radial-gradient(ellipse at bottom, nth($colores,5), transparent, transparent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: reveal 3000ms ease-in-out forwards 200ms,
+                       glow 2500ms linear infinite 2000ms;
+          
+            @keyframes reveal {
+              80%{
+                letter-spacing: 8px;
+              }
+              100% {
+                background-size: 300% 300%;
+              }
+            }
+            @keyframes glow {
+              40% {
+                text-shadow: 0 0 8px nth($colores,5);
+              }
+            }
+          }  
     }
 }

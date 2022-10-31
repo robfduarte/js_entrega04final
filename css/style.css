@@ -206,6 +206,26 @@ contact-info, .contact-email, .footer-text {
   max-width: 35rem;
   line-height: 1.6rem;
 }
+.aboutUs-container .about-text .hx-heading {
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #051622, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #051622;
+  }
+}
 
 /* -----===== SKILLS ======----- */
 .skills-container {
@@ -216,6 +236,26 @@ contact-info, .contact-email, .footer-text {
 @media screen and (max-width: 500px) {
   .skills-container {
     padding: 3rem 2rem;
+  }
+}
+.skills-container .hx-heading {
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #051622, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #051622;
   }
 }
 .skills-container .tech-list {
@@ -271,6 +311,26 @@ contact-info, .contact-email, .footer-text {
   background-color: #ece3db;
   color: #051622;
 }
+.experience-container .hx-heading {
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #051622, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #051622;
+  }
+}
 @media screen and (max-width: 500px) {
   .experience-container {
     padding: 3rem 2rem;
@@ -323,6 +383,26 @@ contact-info, .contact-email, .footer-text {
   padding: 7rem 5rem;
   background-color: #DEB992;
   color: #051622;
+}
+.portfolio-container .hx-heading {
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #051622, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #051622;
+  }
 }
 @media screen and (max-width: 500px) {
   .portfolio-container {
@@ -392,6 +472,26 @@ contact-info, .contact-email, .footer-text {
   padding: 7rem 5rem;
   background-color: #ece3db;
   color: #051622;
+}
+.contactUs-container .hx-heading {
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #051622, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #051622;
+  }
 }
 @media screen and (max-width: 500px) {
   .contactUs-container {
