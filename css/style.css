@@ -268,28 +268,28 @@ contact-info, .contact-email, .footer-text {
 .skills-container .tech-list li {
   flex-basis: 50%;
   box-sizing: border-box;
-  animation: fade 8s linear infinite;
+  animation: fade 12s linear infinite;
 }
 .skills-container .tech-list li:nth-of-type(2) {
-  animation-delay: 1s;
+  animation-delay: 1.5s;
 }
 .skills-container .tech-list li:nth-of-type(3) {
-  animation-delay: 2s;
-}
-.skills-container .tech-list li:nth-of-type(4) {
   animation-delay: 3s;
 }
+.skills-container .tech-list li:nth-of-type(4) {
+  animation-delay: 4.5s;
+}
 .skills-container .tech-list li:nth-of-type(5) {
-  animation-delay: 4s;
-}
-.skills-container .tech-list li:nth-of-type(6) {
-  animation-delay: 5s;
-}
-.skills-container .tech-list li:nth-of-type(7) {
   animation-delay: 6s;
 }
+.skills-container .tech-list li:nth-of-type(6) {
+  animation-delay: 7.5s;
+}
+.skills-container .tech-list li:nth-of-type(7) {
+  animation-delay: 9s;
+}
 .skills-container .tech-list li:nth-of-type(8) {
-  animation-delay: 7s;
+  animation-delay: 10.5s;
 }
 @keyframes fade {
   from {
