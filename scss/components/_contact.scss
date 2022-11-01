@@ -1,28 +1,8 @@
 /* -----===== CONTACT US ======----- */
 
 .contactUs-container{
-    .hx-heading {
-        background: 50% 100% / 50% 50% no-repeat
-                    radial-gradient(ellipse at bottom, nth($colores,5), transparent, transparent);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        animation: reveal 3000ms ease-in-out forwards 200ms,
-                   glow 2500ms linear infinite 2000ms;
-      
-        @keyframes reveal {
-          80%{
-            letter-spacing: 8px;
-          }
-          100% {
-            background-size: 300% 300%;
-          }
-        }
-        @keyframes glow {
-          40% {
-            text-shadow: 0 0 8px nth($colores,5);
-          }
-        }
+  .hx-heading {
+    @extend %luminance;
       }  
 
     @include style-containers(7rem 5rem, nth($colores,3), nth($colores,5));
@@ -38,13 +18,13 @@
         border-style:solid;
         border-width: 1px;
         border-color: nth($colores,5);
-        padding: 0.4rem;
+        padding: 0.5rem 0rem;
         .form-details{
             color: nth($colores,2);
             text-transform: uppercase;
             letter-spacing: 2px;
             padding-top: 0.7rem;
-            padding-bottom: 1rem;
+            padding-bottom: 0rem;
             padding-left: 0.4rem;
             padding-right: 0.4rem;
             .form-input{
@@ -72,7 +52,11 @@
                 letter-spacing: 2px;
                 font-size: 0.7rem;
                 padding: 0.4rem 0.5rem;
-                margin-left: 3rem;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
                 border: none;
                 width: 200px;
                 cursor: pointer;
