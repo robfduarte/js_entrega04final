@@ -3,7 +3,7 @@ function mainMenu() {
     let cart;
     let selectedServices = [];
     do {
-        cart = prompt("Select an option to continue: \n 1 - Add services to cart \n 2 - Checkout \n 3 - Exit");
+        cart = prompt("Select an option to continue: \n1 - Add services to cart \n2 - Checkout \n3 - Exit");
         cart = parseInt(cart);
         switch (cart) {
             case 1:
@@ -16,8 +16,8 @@ function mainMenu() {
                     alert("You have not selected any service yet")
                     break;
                 } else {
-                    alert("Your total is: $" + total + "\n Please select next available payment options for discounts");
-                    let paymentMethod = prompt("Select payment method: \n 1 - BRUBANK (50% OFF) \n 2 - Other methods");
+                    alert("Your total is: $" + total + "\nPlease select next available payment options for discounts");
+                    let paymentMethod = prompt("Select payment method: \n1 - BRUBANK (50% OFF) \n2 - Other methods");
                     paymentMethod = parseInt(paymentMethod);
                     if (paymentMethod === 1) {
                         total = total * 0.5;
@@ -44,7 +44,7 @@ function mainMenu() {
 
 function selectService() {
     let service = {};
-    let serviceOption = prompt("Select the desired service: \n 1 - Basic Website Design \n 2 - E-commerce Website Design \n 3 - Custom Website Development \n 4 - Website Maintenance \n 5 - Search Engine Optimization (SEO) \n 6 - Exit");
+    let serviceOption = prompt("Select the desired service: \n1 - Basic Website Design \n2 - E-commerce Website Design \n3 - Custom Website Development \n4 - Website Maintenance \n5 - Search Engine Optimization (SEO) \n6 - Exit");
     serviceOption = parseInt(serviceOption);
     switch (serviceOption) {
         case 1:
