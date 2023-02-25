@@ -1,0 +1,22 @@
+{
+  "1": {
+    "name": "Basic Website Design",
+    "price": 3000
+  },
+  "2": {
+    "name": "E-commerce Website Design",
+    "price": 5800
+  },
+  "3": {
+    "name": "Custom Website Development",
+    "price": 8100
+  },
+  "4": {
+    "name": "Website Maintenance",
+    "price": 10000
+  },
+  "5": {
+    "name": "Search Engine Optimization",
+    "price": 6200
+  }
+}
