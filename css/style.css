@@ -170,6 +170,22 @@ select::-ms-expand {
   -o-transition: .25s all ease;
   transition: .25s all ease;
 }
+
+.btn-quantity {
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+}
+
+.btn-quantity:hover {
+  background-color: #bbb;
+}
+
 //////////////////
 
 

@@ -77,17 +77,40 @@ const renderCart = () => {
   let html = "";
   for (const [index, service] of selectedServices.entries()) {
     html += `
-        <tr>
-          <td>${service.name}</td>
-          <td>${service.price}</td>
-          <td>${service.quantity}</td>
-          <td>${service.price * service.quantity}</td>
-          <td><button class="boton2" onclick="removeFromCart(${index})">Remove</button></td>
-        </tr>
-      `;
+      <tr>
+        <td>${service.name}</td>
+        <td>${service.price}</td>
+        <td>
+          <button class="btn-quantity" onclick="decreaseQuantity(${index})">-</button>
+          ${service.quantity}
+          <button class="btn-quantity" onclick="increaseQuantity(${index})">+</button>
+        </td>
+        <td>${service.price * service.quantity}</td>
+        <td><button class="boton2" onclick="removeFromCart(${index})">Remove</button></td>
+      </tr>
+    `;
   }
-  cartBody.innerHTML = html; // Insert the generated HTML into the cart body
+  cartBody.innerHTML = html;
 };
+
+//  Check if the current quantity is greater than 1 before decreasing
+const decreaseQuantity = (index) => {
+  if (selectedServices[index].quantity > 1) {
+    selectedServices[index].quantity--;
+    calculateTotal();
+    renderCart();
+    localStorage.setItem('selectedServices', JSON.stringify(selectedServices));
+  }
+};
+ 
+// Increments the quantity, recalculates the total, and re-renders the cart
+const increaseQuantity = (index) => {
+  selectedServices[index].quantity++;
+  calculateTotal();
+  renderCart();
+  localStorage.setItem('selectedServices', JSON.stringify(selectedServices));
+};
+
 
 // Remove item from cart
 const removeFromCart = (index) => {
