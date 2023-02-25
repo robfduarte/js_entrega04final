@@ -14,59 +14,69 @@ let selectedServices = [];
 let timer;
 
 const showInactiveAlert = () => {
-    Swal.fire({
-      title: 'Are you there?',
-      html: `You have been inactive for more than 10 seconds. Do you want to continue adding services to the cart?`,
-      showCancelButton: true,
-      focusCancel: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'No, clear cart',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        clearTimeout(timer);
-      } else {
-        clearCart();
-      }
-    });
-  };
-  
+  Swal.fire({
+    title: 'Are you there?',
+    html: `You have been inactive for more than 10 seconds. Do you want to continue adding services to the cart?`,
+    showCancelButton: true,
+    focusCancel: true,
+    confirmButtonText: 'Yes',
+    cancelButtonText: 'No, clear cart',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      clearTimeout(timer);
+    } else {
+      clearCart();
+    }
+  });
+};
+
+const calculateTotal = () => {
+  total = selectedServices.reduce((acc, service) => {
+    return acc + service.price * service.quantity;
+  }, 0);
+  totalPrice.textContent = total;
+  localStorage.setItem('total', total);
+};
+
 const addToCart = () => {
-    const selectedOption = servicesDropdown.value;
-    if (!selectedOption) {
-      Swal.fire({
-        title: 'Error',
-        html: `Please select a service`,
-        showCancelButton: false,
-        focusConfirm: false,
-        confirmButtonText: 'OK',
-      });
-      return;
+  const selectedOption = servicesDropdown.value;
+  if (!selectedOption) {
+    Swal.fire({
+      title: 'Error',
+      html: `Please select a service`,
+      showCancelButton: false,
+      focusConfirm: false,
+      confirmButtonText: 'OK',
+    });
+    return;
+  }
+  const selectedService = SERVICE_OPTIONS[selectedOption];
+  // Check if the service is already in the cart
+  let found = false;
+  for (const [index, service] of selectedServices.entries()) {
+    if (service.name === selectedService.name) {
+      selectedServices[index].quantity++; // If found, increment the quantity
+      found = true;
+      break;
     }
-    const selectedService = SERVICE_OPTIONS[selectedOption];
-    // Check if the service is already in the cart
-    let found = false;
-    for (const [index, service] of selectedServices.entries()) {
-      if (service.name === selectedService.name) {
-        selectedServices[index].quantity++; // If found, increment the quantity
-        found = true;
-        break;
-      }
-    }
-    // If not found, add the service to the cart
-    if (!found) {
-      selectedServices.push({ ...selectedService, quantity: 1 });
-    }
-    total += selectedService.price;
-    localStorage.setItem('selectedServices', JSON.stringify(selectedServices));
-    localStorage.setItem('total', total);
-    renderCart();
-  };
+  }
+  // If not found, add the service to the cart
+  if (!found) {
+    selectedServices.push({
+      ...selectedService,
+      quantity: 1
+    });
+  }
+  localStorage.setItem('selectedServices', JSON.stringify(selectedServices));
+  calculateTotal();
+  renderCart();
+};
 
 // Render the cart table
 const renderCart = () => {
-    let html = "";
-    for (const [index, service] of selectedServices.entries()) {
-        html += `
+  let html = "";
+  for (const [index, service] of selectedServices.entries()) {
+    html += `
         <tr>
           <td>${service.name}</td>
           <td>${service.price}</td>
@@ -75,37 +85,36 @@ const renderCart = () => {
           <td><button class="boton2" onclick="removeFromCart(${index})">Remove</button></td>
         </tr>
       `;
-    }
-    cartBody.innerHTML = html; // Insert the generated HTML into the cart body
+  }
+  cartBody.innerHTML = html; // Insert the generated HTML into the cart body
 };
 
-// Remove ittem from cart
+// Remove item from cart
 const removeFromCart = (index) => {
-    const service = selectedServices[index];
-    total -= service.price * service.quantity;
-    selectedServices.splice(index, 1);
-    localStorage.setItem("selectedServices", JSON.stringify(selectedServices));
-    localStorage.setItem("total", total);
-    renderCart();
-    totalPrice.textContent = total;
+  const service = selectedServices[index];
+  total -= service.price * service.quantity;
+  selectedServices.splice(index, 1);
+  localStorage.setItem("selectedServices", JSON.stringify(selectedServices));
+  calculateTotal();
+  renderCart();
 };
 
 // Clear the cart
 const clearCart = () => {
-    selectedServices = [];
-    total = 0;
-    localStorage.clear();
-    renderCart();
-    totalPrice.innerHTML = "0";
+  selectedServices = [];
+  total = 0;
+  localStorage.clear();
+  calculateTotal();
+  renderCart();
 };
 
 const calculateDiscount = () => {
-    let discountedPrice = total;
-    if (paymentMethodDropdown.value === "Brubank") {
-        discountedPrice *= BRUBANK_DISCOUNT;
-    }
-    totalPrice.textContent = discountedPrice;
-    localStorage.setItem("discountedPrice", discountedPrice);
+  let discountedPrice = total;
+  if (paymentMethodDropdown.value === "Brubank") {
+    discountedPrice *= BRUBANK_DISCOUNT;
+  }
+  totalPrice.textContent = discountedPrice;
+  localStorage.setItem("discountedPrice", discountedPrice);
 };
 
 const SERVICE_OPTIONS = {};
@@ -117,6 +126,7 @@ const loadServices = async () => {
     const storedServices = localStorage.getItem('selectedServices');
     if (storedServices) {
       selectedServices = JSON.parse(storedServices);
+      calculateTotal();
       renderCart(); // Render the cart table with the stored services
     }
     for (const [id, service] of Object.entries(services)) {
@@ -130,28 +140,27 @@ const loadServices = async () => {
 const loadTotal = () => {
   const storedTotal = localStorage.getItem("total");
   if (storedTotal) {
-      total = parseInt(storedTotal);
-      totalPrice.textContent = total; // Update the total price in the UI
+    total = parseFloat(storedTotal);
+    calculateTotal();
   }
 };
 
 const loadDiscountedPrice = () => {
   const storedDiscountedPrice = localStorage.getItem("discountedPrice");
   if (storedDiscountedPrice) {
-      totalPrice.textContent = storedDiscountedPrice;
-      total = parseFloat(storedDiscountedPrice); // Update the total variable with the discounted price
+    totalPrice.textContent = storedDiscountedPrice;
+    total = parseFloat(storedDiscountedPrice); // Update the total variable with the discounted price
   }
 };
 
 loadServices();
 loadTotal();
-renderCart();
 loadDiscountedPrice();
 
 addToCartBtn.addEventListener("click", addToCart);
 clearCartBtn.addEventListener("click", clearCart);
 checkoutBtn.addEventListener("click", calculateDiscount);
 document.addEventListener('mousemove', () => {
-    clearTimeout(timer);
-    timer = setTimeout(showInactiveAlert, 10000); // set the timer to 10 seconds
-  });
+  clearTimeout(timer);
+  timer = setTimeout(showInactiveAlert, 10000); // set the timer to 10 seconds
+});
