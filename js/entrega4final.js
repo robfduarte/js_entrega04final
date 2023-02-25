@@ -117,10 +117,10 @@ const loadServices = async () => {
     const storedServices = localStorage.getItem('selectedServices');
     if (storedServices) {
       selectedServices = JSON.parse(storedServices);
+      renderCart(); // Render the cart table with the stored services
     }
     for (const [id, service] of Object.entries(services)) {
       SERVICE_OPTIONS[id] = service;
-      console.log('Servicios cargados');
     }
   } catch (error) {
     console.error('Error loading services', error);
@@ -128,17 +128,19 @@ const loadServices = async () => {
 };
 
 const loadTotal = () => {
-    const storedTotal = localStorage.getItem("total");
-    if (storedTotal) {
-        total = parseInt(storedTotal);
-    }
+  const storedTotal = localStorage.getItem("total");
+  if (storedTotal) {
+      total = parseInt(storedTotal);
+      totalPrice.textContent = total; // Update the total price in the UI
+  }
 };
 
 const loadDiscountedPrice = () => {
-    const storedDiscountedPrice = localStorage.getItem("discountedPrice");
-    if (storedDiscountedPrice) {
-        totalPrice.textContent = storedDiscountedPrice;
-    }
+  const storedDiscountedPrice = localStorage.getItem("discountedPrice");
+  if (storedDiscountedPrice) {
+      totalPrice.textContent = storedDiscountedPrice;
+      total = parseFloat(storedDiscountedPrice); // Update the total variable with the discounted price
+  }
 };
 
 loadServices();
